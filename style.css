@@ -1,0 +1,265 @@
+/* ====== General Styles ====== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #9b59b6, #a16ab8, #9b59b6);
+  background-size: 400% 400%;
+  animation: subtleGradient 20s ease infinite;
+  color: #fff;
+  scroll-behavior: smooth;
+}
+
+/* ====== Navigation ====== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: 0 0 15px 15px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #9b59b6, #a16ab8);
+  background-size: 200% 200%;
+  animation: buttonGradient 6s ease infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+  transform: scale(1.1);
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+/* ====== Hamburger Menu ====== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    background: rgba(0,0,0,0.7);
+    padding: 1rem;
+    border-radius: 10px;
+    gap: 1rem;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+/* ====== Hero Section ====== */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  padding: 2rem;
+}
+
+.logo-wrapper img {
+  max-width: 180px;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+.company-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+}
+
+.tagline {
+  font-size: 1.25rem;
+  text-shadow: 1px 1px 8px rgba(0,0,0,0.6);
+  margin-bottom: 2rem;
+}
+
+/* ====== CTA Buttons ====== */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(45deg, #9b59b6, #a16ab8);
+  background-size: 200% 200%;
+  animation: buttonGradient 6s ease infinite, buttonGlow 2s ease-in-out infinite, buttonBounce 2s ease-in-out infinite;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.6), 0 0 15px rgba(255,255,255,0.7);
+}
+
+/* ====== Sections ====== */
+.section {
+  padding: 6rem 2rem;
+  text-align: center;
+}
+
+.section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.section p, .section ul {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+}
+
+/* ====== Review / Testimonials ====== */
+.review-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.review-card {
+  background: #6a0dad;
+  color: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* subtle default shadow */
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* gentle lift on hover */
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+.review-card p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.review-card h4 {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* ====== WhatsApp Floating Button ====== */
+.whatsapp-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366; /* WhatsApp official green */
+  color: #fff;
+  font-size: 2rem;
+  padding: 0.75rem 1rem;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: whatsappPulse 2s ease-in-out infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.2);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.5);
+}
+
+/* ====== Animations ====== */
+@keyframes subtleGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes buttonGradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes buttonGlow {
+  0% { box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+  50% { box-shadow: 0 0 20px rgba(255,255,255,0.8); }
+  100% { box-shadow: 0 0 10px rgba(255,255,255,0.5); }
+}
+
+@keyframes buttonBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes logoGlow {
+  0% { box-shadow: 0 0 20px rgba(255,255,255,0.5); }
+  50% { box-shadow: 0 0 40px rgba(255,255,255,0.8); }
+  100% { box-shadow: 0 0 20px rgba(255,255,255,0.5); }
+}
+
+@keyframes whatsappPulse {
+  0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+  50% { transform: scale(1.1); box-shadow: 0 6px 20px rgba(0,0,0,0.6); }
+  100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.4); }
+}

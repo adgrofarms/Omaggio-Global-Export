@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omaggio Global Export - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-links a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #6a0dad;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: #333;
+      margin: 4px 0;
+      transition: 0.4s;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 20px;
+      background: linear-gradient(135deg, #6a0dad, #808080, #a4de02);
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: #fff;
+      text-align: center;
+    }
+
+    .hero-section .logo {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+
+    .hero-section .tagline {
+      font-size: 1.3em;
+      max-width: 700px;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .cta-buttons {
+      margin-top: 40px;
+    }
+
+    .cta-buttons .btn {
+      margin: 10px;
+      padding: 15px 35px;
+      font-size: 1em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: #6a0dad;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #a64ccf;
+    }
+
+    .btn-secondary {
+      background: #808080; /* grey instead of yellow */
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #a0a0a0; /* subtle grey hover */
+    }
+
+    /* About Preview Card */
+    .about-preview {
+      padding: 60px 20px;
+      text-align: center;
+      background: #f9f9f9;
+    }
+
+    .about-preview h2 {
+      font-size: 2.2em;
+      margin-bottom: 20px;
+      color: #6a0dad;
+    }
+
+    .about-preview p {
+      max-width: 700px;
+      margin: auto;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    /* Reviews Section */
+    .reviews {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .reviews h2 {
+      font-size: 2.2em;
+      margin-bottom: 40px;
+      color: #6a0dad;
+    }
+
+    .review-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .review-card {
+      background: #6a0dad;
+      color: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      width: 250px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #25d366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+      z-index: 100;
+    }
+
+    .whatsapp-btn:hover {
+      transform: scale(1.1);
+    }
+
+    @media(max-width: 768px){
+      .hamburger { display: flex; }
+      .nav-links { display: none; flex-direction: column; }
+      .nav-links.active { display: flex; }
+      .nav-links a { margin: 15px 0; }
+      .review-container { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-logo">Menu</div>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <img src="logo.png" alt="Omaggio Global Export Logo" class="logo">
+    <h1>Omaggio Global Export</h1>
+    <p class="tagline">Bridging Markets, Delivering Excellence</p>
+    <div class="cta-buttons">
+      <button class="btn btn-primary">Get a Quote</button>
+      <button class="btn btn-secondary">Explore Services</button>
+    </div>
+  </section>
+
+  <!-- About Preview Section -->
+  <section class="section about-preview">
+    <h2>About Omaggio Global Export</h2>
+    <p>Our journey began with a simple observation: Nigerians abroad were missing a taste of home. We realized a single shipment could reconnect families, support local producers, and celebrate our culture worldwide.</p>
+    <a href="about.html" class="btn btn-primary">Learn More</a>
+  </section>
+
+  <!-- Reviews Section -->
+  <section class="section reviews">
+    <h2>What Our Clients Say</h2>
+    <div class="review-container">
+      <div class="review-card">
+        <p>"Omaggio Global Export made our first international shipment seamless and efficient. Highly recommend!"</p>
+        <h4>– Adewale T.</h4>
+      </div>
+      <div class="review-card">
+        <p>"Professional service with prompt delivery. Our business partners are impressed."</p>
+        <h4>– Funke O.</h4>
+      </div>
+      <div class="review-card">
+        <p>"The team at Omaggio Global Export is reliable and knowledgeable. A pleasure to work with!"</p>
+        <h4>– Chinedu K.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/07056445302" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>

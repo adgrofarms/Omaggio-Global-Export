@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omaggio Global Export - Services</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .services h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      color: #6a0dad; /* primary purple */
+    }
+
+    .services p {
+      font-size: 1.2em;
+      margin-bottom: 40px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
+    }
+
+    .services-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .service-card {
+      background: linear-gradient(145deg, #6a0dad, #f7b500, #a4de02);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+      width: 250px;
+      padding: 25px;
+      border-radius: 15px;
+      color: #fff;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .service-card i {
+      font-size: 2.5em;
+      margin-bottom: 15px;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    .cta-buttons {
+      margin-top: 40px;
+    }
+
+    .cta-buttons .btn {
+      margin: 10px;
+      padding: 15px 35px;
+      font-size: 1em;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: #6a0dad;
+      color: #fff;
+    }
+
+    .btn-primary:hover {
+      background: #a64ccf;
+    }
+
+    .btn-secondary {
+      background: #f7b500;
+      color: #fff;
+    }
+
+    .btn-secondary:hover {
+      background: #ffcd3c;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-logo">Menu</div>
+    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- Services / Exports Section -->
+  <section class="section services">
+    <h2>Our Services & Exports</h2>
+    <p>We help businesses and families access the best of Nigeria with reliable international shipping. Our products cover food, beverages, textiles, artisanal goods, and more.</p>
+
+    <div class="services-list">
+      <div class="service-card">
+        <i class="fas fa-utensils"></i>
+        <h3>Nigerian Food</h3>
+        <p>Indomie, Spaghetti, Rice, Garri, and other authentic staples.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-wine-glass-alt"></i>
+        <h3>Beverages & Drinks</h3>
+        <p>Soft drinks, Zobo, Malt drinks, locally brewed beverages.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-tshirt"></i>
+        <h3>Textiles & Fashion</h3>
+        <p>Fabrics, Ankara, Lace, and fashion materials made in Nigeria.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-box-open"></i>
+        <h3>Artisanal & Crafts</h3>
+        <p>Handcrafted items, jewelry, souvenirs, and cultural goods.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-industry"></i>
+        <h3>Industrial & Manufactured Goods</h3>
+        <p>Household products, construction materials, and other manufactured goods.</p>
+      </div>
+    </div>
+
+    <div class="cta-buttons">
+      <button class="btn btn-primary">Get a Quote</button>
+      <button class="btn btn-secondary">Contact Us</button>
+    </div>
+  </section>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/07056445302" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <script>
+    function toggleMenu() {
+      document.querySelector('.nav-links').classList.toggle('active');
+    }
+  </script>
+
+</body>
+</html>
