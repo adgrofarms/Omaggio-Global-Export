@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -75,6 +75,8 @@
       border-radius: 50px;
       cursor: pointer;
       transition: all 0.3s;
+      text-decoration: none; /* Removes underline from links */
+      display: inline-block; /* Allows padding to work on links */
     }
 
     .btn-primary {
@@ -143,14 +145,15 @@
       </div>
     </div>
 
+    <!-- FIXED BUTTONS - Now they are links and will work! -->
     <div class="cta-buttons">
-      <button class="btn btn-primary">Get a Quote</button>
-      <button class="btn btn-secondary">Contact Us</button>
+      <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+      <a href="contact.html" class="btn btn-secondary">Contact Us</a>
     </div>
   </section>
 
   <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/07056445302" class="whatsapp-btn" target="_blank">
+ <a href="https://wa.me/2347056445302" class="whatsapp-btn" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
 
