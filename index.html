@@ -1,272 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omaggio Global Export - Home</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Navbar */
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 40px;
-      background: #fff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .nav-links a {
-      margin-left: 25px;
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: #6a0dad;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background: #333;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    /* Hero Section */
-    .hero-section {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, #6a0dad, #808080, #a4de02);
-      background-size: 400% 400%;
-      animation: gradientBG 15s ease infinite;
-      color: #fff;
-      text-align: center;
-    }
-
-    .hero-section .logo {
-      width: 120px;
-      margin-bottom: 20px;
-    }
-
-    .hero-section h1 {
-      font-size: 3em;
-      margin-bottom: 15px;
-    }
-
-    .hero-section .tagline {
-      font-size: 1.3em;
-      max-width: 700px;
-    }
-
-    @keyframes gradientBG {
-      0% {background-position: 0% 50%;}
-      50% {background-position: 100% 50%;}
-      100% {background-position: 0% 50%;}
-    }
-
-    .cta-buttons {
-      margin-top: 40px;
-    }
-
-    .cta-buttons .btn {
-      margin: 10px;
-      padding: 15px 35px;
-      font-size: 1em;
-      border: none;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
-
-    .btn-primary {
-      background: #6a0dad;
-      color: #fff;
-    }
-
-    .btn-primary:hover {
-      background: #a64ccf;
-    }
-
-    .btn-secondary {
-      background: #808080; /* grey instead of yellow */
-      color: #fff;
-    }
-
-    .btn-secondary:hover {
-      background: #a0a0a0; /* subtle grey hover */
-    }
-
-    /* About Preview Card */
-    .about-preview {
-      padding: 60px 20px;
-      text-align: center;
-      background: #f9f9f9;
-    }
-
-    .about-preview h2 {
-      font-size: 2.2em;
-      margin-bottom: 20px;
-      color: #6a0dad;
-    }
-
-    .about-preview p {
-      max-width: 700px;
-      margin: auto;
-      margin-bottom: 30px;
-      color: #333;
-    }
-
-    /* Reviews Section */
-    .reviews {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    .reviews h2 {
-      font-size: 2.2em;
-      margin-bottom: 40px;
-      color: #6a0dad;
-    }
-
-    .review-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .review-card {
-      background: #6a0dad;
-      color: #fff;
-      padding: 25px;
-      border-radius: 15px;
-      width: 250px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .review-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-    }
-
-    /* Floating WhatsApp Button */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #25d366;
-      color: #fff;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 30px;
-      text-decoration: none;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-      z-index: 100;
-    }
-
-    .whatsapp-btn:hover {
-      transform: scale(1.1);
-    }
-
-    @media(max-width: 768px){
-      .hamburger { display: flex; }
-      .nav-links { display: none; flex-direction: column; }
-      .nav-links.active { display: flex; }
-      .nav-links a { margin: 15px 0; }
-      .review-container { flex-direction: column; align-items: center; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omaggio Global Export - Home</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; margin:0; padding:0; }
+  .navbar { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100;}
+  .nav-links a { margin-left:25px; text-decoration:none; color:#333; font-weight:500; transition:color 0.3s; }
+  .nav-links a:hover { color:#6a0dad; }
+  .hamburger { display:none; flex-direction:column; cursor:pointer; }
+  .hamburger div { width:20px; height:0.15px; background:#333; margin:3px 0; transition:0.4s; }
+  .hero-section { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:100px 20px; background: linear-gradient(135deg, #6a0dad, #a4de02); background-size:400% 400%; animation: gradientBG 15s ease infinite; color:#fff; text-align:center; }
+  .hero-section img { width:120px; margin-bottom:20px; }
+  .hero-section h1 { font-size:3em; margin-bottom:15px; }
+  .hero-section .tagline { font-size:1.3em; max-width:700px; }
+  @keyframes gradientBG { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+  .cta-buttons { margin-top:40px; display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+  .cta-buttons .btn { margin:10px; padding:15px 35px; font-size:1em; border:none; border-radius:50px; cursor:pointer; transition:all 0.3s; text-decoration:none; display:inline-block; text-align:center; }
+  .btn-primary { background:#6a0dad; color:#fff; }
+  .btn-primary:hover { background:#a64ccf; }
+  .btn-secondary { background:#a4de02; color:#fff; }
+  .btn-secondary:hover { background:#c7ff47; }
+  .about-preview { padding:60px 20px; text-align:center; background:#f9f9f9; }
+  .about-preview h2 { font-size:2.2em; margin-bottom:20px; color:#6a0dad; }
+  .about-preview p { max-width:700px; margin:auto; margin-bottom:30px; color:#333; }
+  .reviews { padding:60px 20px; text-align:center; }
+  .reviews h2 { font-size:2.2em; margin-bottom:40px; color:#6a0dad; }
+  .review-container { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+  .review-card { background:#6a0dad; color:#fff; padding:25px; border-radius:15px; width:250px; transition: transform 0.3s, box-shadow 0.3s; }
+  .review-card:hover { transform:translateY(-10px); box-shadow:0 10px 15px rgba(0,0,0,0.2); }
+  .whatsapp-btn { position: fixed; bottom:30px; right:30px; width:60px; height:60px; background:#25d366; border-radius:50%; display:flex; align-items:center; justify-content:center; text-decoration:none; box-shadow:0 5px 15px rgba(0,0,0,0.2); transition:transform 0.3s; z-index:1000; }
+  .whatsapp-btn:hover { transform:scale(1.1); }
+  .whatsapp-btn svg { width:30px; height:30px; fill:#fff; }
+  @media(max-width:768px){ .hamburger { display:flex; } .nav-links { display:none; flex-direction:column; } .nav-links.active { display:flex; } .nav-links a { margin:15px 0; } .review-container { flex-direction:column; align-items:center; } }
+</style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="nav-logo">Menu</div>
-    <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact Us</a>
+<nav class="navbar">
+  <div class="nav-logo">Menu</div>
+  <div class="hamburger" onclick="toggleMenu()"><div></div><div></div><div></div></div>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="services.html">Services</a>
+  </div>
+</nav>
+
+<section class="hero-section">
+  <img src="logo.png" alt="Omaggio Global Export Logo">
+  <h1>Omaggio Global Export</h1>
+  <p class="tagline">Bridging Markets, Delivering Excellence</p>
+  <div class="cta-buttons">
+    <a href="quote.html" class="btn btn-primary">Get a Quote</a>
+    <a href="services.html" class="btn btn-secondary">Explore Services</a>
+  </div>
+</section>
+
+<section class="about-preview">
+  <h2>About Omaggio Global Export</h2>
+  <p>Our journey began with a simple observation: Nigerians abroad were missing a taste of home. We realized a single shipment could reconnect families, support local producers, and celebrate our culture worldwide.</p>
+  <a href="about.html" class="btn btn-primary">Learn More</a>
+</section>
+
+<section class="reviews">
+  <h2>What Our Clients Say</h2>
+  <div class="review-container">
+    <div class="review-card">
+      <p>"Omaggio Global Export made our first international shipment seamless and efficient. Highly recommend!"</p>
+      <h4>– Adewale T⭐⭐⭐⭐.</h4>
     </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <img src="logo.png" alt="Omaggio Global Export Logo" class="logo">
-    <h1>Omaggio Global Export</h1>
-    <p class="tagline">Bridging Markets, Delivering Excellence</p>
-    <div class="cta-buttons">
-      <button class="btn btn-primary">Get a Quote</button>
-      <button class="btn btn-secondary">Explore Services</button>
+        <div class="review-card">
+      <p>"Loved the service! Adesewa made everything transparent and easy."   </p>
+      <h4>– Ngozi Eze ⭐⭐⭐⭐⭐.</h4>
     </div>
-  </section>
-
-  <!-- About Preview Section -->
-  <section class="section about-preview">
-    <h2>About Omaggio Global Export</h2>
-    <p>Our journey began with a simple observation: Nigerians abroad were missing a taste of home. We realized a single shipment could reconnect families, support local producers, and celebrate our culture worldwide.</p>
-    <a href="about.html" class="btn btn-primary">Learn More</a>
-  </section>
-
-  <!-- Reviews Section -->
-  <section class="section reviews">
-    <h2>What Our Clients Say</h2>
-    <div class="review-container">
-      <div class="review-card">
-        <p>"Omaggio Global Export made our first international shipment seamless and efficient. Highly recommend!"</p>
-        <h4>– Adewale T.</h4>
-      </div>
-      <div class="review-card">
-        <p>"Professional service with prompt delivery. Our business partners are impressed."</p>
-        <h4>– Funke O.</h4>
-      </div>
-      <div class="review-card">
-        <p>"The team at Omaggio Global Export is reliable and knowledgeable. A pleasure to work with!"</p>
-        <h4>– Chinedu K.</h4>
-      </div>
+        <div class="review-card">
+      <p>"Professional service with prompt delivery. Our business partners are impressed."</p>
+      <h4>– Chimamanda Nwachukwu. ⭐⭐⭐⭐⭐ .</h4>
     </div>
-  </section>
+    <div class="review-card">
+      <p>"Prince made the process easy and kept me informed at every stage."</p>
+      <h4>– O. O</h4>
+    </div>
+    <div class="review-card">
+      <p>"The team at Omaggio Global Export is reliable and knowledgeable. A pleasure to work with!"</p>
+      <h4>– Chinedu K.</h4>
+    </div>
+  </div>
+</section>
 
-  <!-- Floating WhatsApp Button -->
-  <a href="https://wa.me/07056445302" class="whatsapp-btn" target="_blank">
-    <i class="fab fa-whatsapp"></i>
-  </a>
+<a href="https://wa.me/2347056445302" target="_blank" class="whatsapp-btn">
+  <svg viewBox="0 0 24 24">
+    <path d="M20.52 3.48A11.93 11.93 0 0012 .5C5.65.5.5 5.65.5 12a11.86 11.86 0 001.71 6.04L.5 23.5l5.13-1.68A11.88 11.88 0 0012 23.5c6.35 0 11.5-5.15 11.5-11.5 0-3.07-1.2-5.97-3.48-8.52zm-8.5 18c-2.42 0-4.66-.78-6.47-2.1l-.46-.28-3.05 1 1-3.05-.3-.47A9.48 9.48 0 012.5 12C2.5 6.21 6.21 2.5 12 2.5S21.5 6.21 21.5 12 17.79 21.5 12 21.5zm5.15-7.45c-.27-.14-1.59-.79-1.84-.88-.25-.09-.44-.13-.63.14-.18.26-.69.88-.85 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.56.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.04-.33-.02-.46-.06-.13-.63-1.52-.86-2.08-.23-.55-.46-.48-.63-.49-.16-.01-.35-.01-.54-.01s-.46.07-.7.33c-.24.26-.92.9-.92 2.2 0 1.3.94 2.56 1.07 2.74.13.18 1.84 2.95 4.46 4.14 2.62 1.19 2.62.79 3.09.74.47-.05 1.53-.62 1.74-1.22.21-.6.21-1.11.15-1.22-.06-.11-.25-.18-.52-.32z"/>
+  </svg>
+</a>
 
-  <script>
-    function toggleMenu() {
-      document.querySelector('.nav-links').classList.toggle('active');
-    }
-  </script>
+<script>
+function toggleMenu() { document.querySelector('.nav-links').classList.toggle('active'); }
+</script>
 
 </body>
 </html>
