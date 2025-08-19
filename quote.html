@@ -1,0 +1,207 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get a Quote - Omaggio Global Export</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+  <style>
+    body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background: #f9f9f9; }
+    .navbar { display: flex; justify-content: space-between; align-items: center; padding: 15px 30px; background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+    .nav-links a { margin-left: 20px; text-decoration: none; color: #333; font-weight: 500; transition: color 0.3s; }
+    .nav-links a:hover { color: #6a0dad; }
+    .quote-section { max-width: 600px; margin: 60px auto; padding: 30px; background: #fff; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+    .quote-section h2 { text-align: center; color: #6a0dad; margin-bottom: 25px; }
+    .quote-section label { display: block; margin: 15px 0 5px; font-weight: 500; }
+    .quote-section input,
+    .quote-section select,
+    .quote-section textarea { width: 100%; padding: 12px 15px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc; font-size: 1em; }
+    .quote-section button { width: 100%; padding: 15px; border: none; border-radius: 50px; font-size: 1em; background: #25d366; color: #fff; cursor: pointer; transition: transform 0.3s; }
+    .quote-section button:hover { transform: scale(1.05); }
+    .country-info { display: flex; align-items: center; padding: 10px 15px; background-color: #f0f8ff; border-radius: 8px; margin-bottom: 15px; border-left: 4px solid #6a0dad; }
+    .country-flag { font-size: 24px; margin-right: 10px; }
+    .country-details { flex: 1; }
+    .country-name { font-weight: 600; color: #333; }
+    .country-message { font-size: 0.85em; color: #666; }
+    @media(max-width: 768px){ .quote-section { margin: 40px 20px; } }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="nav-logo">Omaggio Global Export</div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </nav>
+
+  <!-- Quote Form Section -->
+  <section class="quote-section">
+    <h2>Get a Quote</h2>
+    
+    <div class="country-info" id="countryInfo" style="display: none;">
+      <div class="country-flag" id="countryFlag">🇳🇬</div>
+      <div class="country-details">
+        <div class="country-name" id="countryName">Detecting your location...</div>
+        <div class="country-message" id="countryMessage">We'll use this to provide better service</div>
+      </div>
+    </div>
+    
+    <form id="quoteForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Full Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <label for="country">Your Country</label>
+      <select id="country" required>
+        <option value="">Select your country</option>
+        <option value="NG">Nigeria</option>
+        <option value="GH">Ghana</option>
+        <option value="KE">Kenya</option>
+        <option value="US">United States</option>
+        <option value="GB">United Kingdom</option>
+        <option value="OTHER">Other Country</option>
+      </select>
+
+      <label for="interest">What are you interested in?</label>
+      <select id="interest" required>
+        <option value="">Select Product/Service</option>
+
+        <optgroup label="Nigerian Food Staples">
+          <option value="garri">Garri (White & Yellow)</option>
+          <option value="yam_flour">Yam Flour (Elubo)</option>
+          <option value="semolina">Semolina</option>
+          <option value="wheat_flour">Wheat Flour</option>
+          <option value="plantain_flour">Plantain Flour</option>
+          <option value="bean_flour">Bean Flour</option>
+          <option value="corn_flour">Corn Flour</option>
+          <option value="rice_ofada">Rice (Ofada/Local)</option>
+          <option value="rice_abakaliki">Rice (Abakaliki)</option>
+          <option value="rice_lake">Rice (Lake Rice)</option>
+          <option value="beans_white">Beans (White/Black-eyed)</option>
+          <option value="beans_honey">Beans (Honey Beans)</option>
+          <option value="beans_oloyin">Beans (Oloyin)</option>
+          <option value="beans_brown">Beans (Brown Beans)</option>
+        </optgroup>
+
+        <optgroup label="Oils & Fats">
+          <option value="palm_oil">Palm Oil (Red Oil)</option>
+          <option value="groundnut_oil">Groundnut Oil</option>
+          <option value="vegetable_oil">Vegetable Oil</option>
+          <option value="coconut_oil">Coconut Oil</option>
+          <option value="palm_kernel_oil">Palm Kernel Oil</option>
+          <option value="shea_butter">Shea Butter</option>
+          <option value="cocoa_butter">Cocoa Butter</option>
+          <option value="avocado_oil">Avocado Oil</option>
+        </optgroup>
+
+        <optgroup label="Spices & Seasonings">
+          <option value="pepper">Pepper (Dry/Fresh)</option>
+          <option value="onions">Onions (Dry/Fresh)</option>
+          <option value="garlic">Garlic (Dry/Fresh)</option>
+          <option value="ginger">Ginger (Dry/Fresh)</option>
+          <option value="turmeric">Turmeric</option>
+          <option value="curry_powder">Curry Powder</option>
+          <option value="thyme">Thyme</option>
+          <option value="nutmeg">Nutmeg</option>
+          <option value="cloves">Cloves</option>
+          <option value="cinnamon">Cinnamon</option>
+          <option value="bay_leaves">Bay Leaves</option>
+          <option value="seasoning_cubes">Seasoning Cubes</option>
+          <option value="dry_fish">Dry Fish</option>
+          <option value="stockfish">Stockfish</option>
+          <option value="shrimp_powder">Shrimp Powder</option>
+          <option value="crayfish">Crayfish</option>
+          <option value="ogiri">Ogiri</option>
+          <option value="iru">Iru (Locust Beans)</option>
+        </optgroup>
+
+        <optgroup label="Dried Vegetables & Herbs">
+          <option value="okra_dried">Okra (Dried)</option>
+          <option value="ogbono_dried">Ogbono (Dried)</option>
+          <option value="ugu_dried">Ugu Leaves (Dried)</option>
+          <option value="bitterleaf_dried">Bitter Leaf (Dried)</option>
+          <option value="ewedu_dried">Ewedu (Dried)</option>
+          <option value="scentleaf">Scent Leaf (Dried)</option>
+          <option value="waterleaf">Water Leaf (Dried)</option>
+          <option value="utazi">Utazi Leaves</option>
+          <option value="uziza">Uziza Leaves</option>
+          <option value="hibiscus">Hibiscus (Zobo)</option>
+          <option value="moringa">Moringa Leaves</option>
+        </optgroup>
+
+        <optgroup label="Nuts & Seeds">
+          <option value="cashew">Cashew Nuts</option>
+          <option value="kola">Kola Nuts</option>
+          <option value="tigernut">Tigernut</option>
+          <option value="groundnut">Groundnut</option>
+          <option value="melon_seeds">Melon Seeds (Egusi)</option>
+          <option value="sesame">Sesame Seeds (Benne Seed)</option>
+          <option value="pumpkin_seeds">Pumpkin Seeds (Ugwu)</option>
+          <option value="breadfruit">African Breadfruit (Ukwa)</option>
+          <option value="oyster_nut">Oyster Nut</option>
+          <option value="chia">Chia Seeds</option>
+        </optgroup>
+
+        <optgroup label="Protein Sources">
+          <option value="snail">Snail (Fresh/Frozen)</option>
+          <option value="grasscutter">Grasscutter (Frozen)</option>
+          <option value="bush_meat">Bush Meat (Smoked)</option>
+          <option value="fish">Fish (Smoked/Dried)</option>
+          <option value="prawns">Prawns (Dried)</option>
+          <option value="beef">Beef (Smoked/Dried)</option>
+          <option value="goat">Goat Meat (Smoked)</option>
+          <option value="chicken">Chicken (Smoked)</option>
+          <option value="turkey">Turkey (Smoked)</option>
+          <option value="eggs">Eggs</option>
+        </optgroup>
+
+        <optgroup label="Grains & Cereals">
+          <option value="maize">Maize/Corn</option>
+          <option value="millet">Millet</option>
+          <option value="sorghum">Sorghum (Guinea Corn)</option>
+          <option value="acha">Acha (Hungry Rice)</option>
+          <option value="fonio">Fonio</option>
+          <option value="wheat">Wheat</option>
+          <option value="barley">Barley</option>
+          <option value="oats">Oats</option>
+          <option value="quinoa">Quinoa</option>
+        </optgroup>
+
+        <optgroup label="Company Processed Foods">
+          <option value="indomie">Indomie Instant Noodles</option>
+          <option value="spaghetti">Spaghetti</option>
+          <option value="pasta">Pasta</option>
+          <option value="milo">Milo</option>
+          <option value="maggi_cubes">Maggi Cubes</option>
+        </optgroup>
+
+        <optgroup label="Textiles & Fabrics">
+          <option value="ankara">Ankara Fabrics</option>
+          <option value="adire">Adire/Tie-Dye</option>
+          <option value="aso_oke">Aso Oke</option>
+          <option value="kente">Kente Cloth</option>
+          <option value="lace">Lace Materials</option>
+          <option value="george">George Fabric</option>
+          <option value="hollandis">Hollandis Fabric</option>
+          <option value="voile">Voile Fabric</option>
+          <option value="broderie">Broderie Anglaise</option>
+          <option value="embroidered">Embroidered Fabrics</option>
+        </optgroup>
+      </select>
+
+      <button type="submit">Submit Quote Request</button>
+    </form>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0
+
